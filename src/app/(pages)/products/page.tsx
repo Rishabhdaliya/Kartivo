@@ -1,7 +1,5 @@
-import React from "react";
+import { ShopGrid } from "@/components/sections/shop-grid";
 
-const page = () => {
-  return <div>products</div>;
-};
-
-export default page;
+export default function Page() {
+  return <ShopGrid />;
+}
