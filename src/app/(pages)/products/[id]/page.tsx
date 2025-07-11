@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import {
   Minus,
   Plus,
@@ -11,80 +11,80 @@ import {
   MessageCircle,
   CheckCircle2,
   Truck,
-  RefreshCw,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Separator } from "@/components/ui/separator";
+  RefreshCw
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Separator } from '@/components/ui/separator';
 
 // Dummy product data
 const product = {
-  id: "inika-mineral-sunkissed",
-  name: "INIKA Mineral Sunkissed",
+  id: 'inika-mineral-sunkissed',
+  name: 'INIKA Mineral Sunkissed',
   description:
-    "Unique that natural glow with the Baked Mineral Bronzer from INIKA. Perfect for contouring, the...",
+    'Unique that natural glow with the Baked Mineral Bronzer from INIKA. Perfect for contouring, the...',
   fullDescription:
-    "Achieve that sun-kissed glow with the Baked Mineral Bronzer from INIKA. Perfect for contouring, the loose powder adds a subtle and natural tanned tone to skin, perfectly complementing medium to medium complexions. Lightweight and non-cakey, it effortlessly sculpts and defines cheekbones to leave skin looking healthy and radiant. Certified Vegan. Cruelty free.",
+    'Achieve that sun-kissed glow with the Baked Mineral Bronzer from INIKA. Perfect for contouring, the loose powder adds a subtle and natural tanned tone to skin, perfectly complementing medium to medium complexions. Lightweight and non-cakey, it effortlessly sculpts and defines cheekbones to leave skin looking healthy and radiant. Certified Vegan. Cruelty free.',
   price: 80.75,
   originalPrice: 99.99,
   colors: [
-    { name: "Light", hex: "#F0D9B5" },
-    { name: "Medium", hex: "#D4A77C" },
-    { name: "Dark", hex: "#A97B5B" },
-    { name: "Deep", hex: "#7A4F3A" },
+    { name: 'Light', hex: '#F0D9B5' },
+    { name: 'Medium', hex: '#D4A77C' },
+    { name: 'Dark', hex: '#A97B5B' },
+    { name: 'Deep', hex: '#7A4F3A' }
   ],
   images: [
     {
-      src: "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      alt: "INIKA Mineral Sunkissed main",
+      src: 'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'INIKA Mineral Sunkissed main'
     },
     {
-      src: "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      alt: "INIKA Mineral Sunkissed thumbnail 1",
+      src: 'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'INIKA Mineral Sunkissed thumbnail 1'
     },
     {
-      src: "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=100&width=100",
-      alt: "INIKA Mineral Sunkissed thumbnail 2",
-    },
+      src: 'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?height=100&width=100',
+      alt: 'INIKA Mineral Sunkissed thumbnail 2'
+    }
   ],
   rating: 4,
   reviewsCount: 1,
-  sku: "SCN782NVMS",
-  category: "Discover Skincare",
-  tags: ["Beauty", "Makeup", "Bronzer"],
-  returnPolicy: "30 days easy returns",
-  deliveryTime: "Order yours before 2:30pm for same day dispatch",
-  paymentMethods: ["Visa", "Mastercard", "Amex", "PayPal", "Stripe"],
+  sku: 'SCN782NVMS',
+  category: 'Discover Skincare',
+  tags: ['Beauty', 'Makeup', 'Bronzer'],
+  returnPolicy: '30 days easy returns',
+  deliveryTime: 'Order yours before 2:30pm for same day dispatch',
+  paymentMethods: ['Visa', 'Mastercard', 'Amex', 'PayPal', 'Stripe']
 };
 
 const relatedProducts = [
   {
     id: 1,
-    name: "Tea Tree Lemon Shampoo",
+    name: 'Tea Tree Lemon Shampoo',
     price: 48.0,
     image:
-      "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "Hair Care",
+      'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    category: 'Hair Care'
   },
   {
     id: 2,
-    name: "Organic Face Cleanser",
+    name: 'Organic Face Cleanser',
     price: 35.0,
     image:
-      "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "Skincare",
+      'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    category: 'Skincare'
   },
   {
     id: 3,
-    name: "Natural Lip Balm",
+    name: 'Natural Lip Balm',
     price: 12.0,
     image:
-      "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "Makeup",
-  },
+      'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    category: 'Makeup'
+  }
 ];
 
 export default function ProductDetailsPage() {
@@ -97,7 +97,7 @@ export default function ProductDetailsPage() {
       <Star
         key={i}
         className={`w-4 h-4 ${
-          i < rating ? "fill-chart-4 text-chart-4" : "text-muted-foreground/30"
+          i < rating ? 'fill-chart-4 text-chart-4' : 'text-muted-foreground/30'
         }`}
       />
     ));
@@ -110,11 +110,11 @@ export default function ProductDetailsPage() {
         <nav className="text-sm text-muted-foreground mb-6">
           <Link href="/" className="hover:underline">
             Home
-          </Link>{" "}
+          </Link>{' '}
           <span className="mx-2">›</span>
           <Link href="/products" className="hover:underline">
             Discover Skincare
-          </Link>{" "}
+          </Link>{' '}
           <span className="mx-2">›</span>
           <span>{product.name}</span>
         </nav>
@@ -131,9 +131,7 @@ export default function ProductDetailsPage() {
                   width={80}
                   height={80}
                   className={`rounded-md object-cover cursor-pointer border-2 ${
-                    mainImage === img.src
-                      ? "border-primary"
-                      : "border-transparent"
+                    mainImage === img.src ? 'border-primary' : 'border-transparent'
                   }`}
                   onClick={() => setMainImage(img.src)}
                 />
@@ -141,7 +139,7 @@ export default function ProductDetailsPage() {
             </div>
             <div className="flex-1 relative">
               <Image
-                src={mainImage || "/placeholder.svg"}
+                src={mainImage || '/placeholder.svg'}
                 alt={product.name}
                 width={600}
                 height={600}
@@ -157,12 +155,10 @@ export default function ProductDetailsPage() {
 
           {/* Product Information */}
           <div className="space-y-2">
-            <h1 className="text-3xl font-bold text-foreground">
-              {product.name}
-            </h1>
+            <h1 className="text-3xl font-bold text-foreground">{product.name}</h1>
             <div className="flex">{renderStars(3)}</div>
             <p className="text-muted-foreground leading-relaxed">
-              {product.description}{" "}
+              {product.description}{' '}
               <Link href="#" className="text-primary hover:underline">
                 See more
               </Link>
@@ -182,19 +178,17 @@ export default function ProductDetailsPage() {
             {/* Color Selection */}
             <div>
               <h3 className="font-semibold text-foreground mb-2">
-                Color:{" "}
+                Color:{' '}
                 <span className="font-normal text-muted-foreground">
-                  {product.colors.find((c) => c.hex === selectedColor)?.name}
+                  {product.colors.find(c => c.hex === selectedColor)?.name}
                 </span>
               </h3>
               <div className="flex space-x-2">
-                {product.colors.map((color) => (
+                {product.colors.map(color => (
                   <div
                     key={color.hex}
                     className={`w-8 h-8 rounded-full border-2 cursor-pointer ${
-                      selectedColor === color.hex
-                        ? "border-primary"
-                        : "border-border"
+                      selectedColor === color.hex ? 'border-primary' : 'border-border'
                     }`}
                     style={{ backgroundColor: color.hex }}
                     onClick={() => setSelectedColor(color.hex)}
@@ -218,11 +212,7 @@ export default function ProductDetailsPage() {
                 <Input
                   type="number"
                   value={quantity}
-                  onChange={(e) =>
-                    setQuantity(
-                      Math.max(1, Number.parseInt(e.target.value) || 1)
-                    )
-                  }
+                  onChange={e => setQuantity(Math.max(1, Number.parseInt(e.target.value) || 1))}
                   className="w-16 text-center border-y-0 rounded-none focus-visible:ring-0"
                 />
                 <Button
@@ -241,27 +231,15 @@ export default function ProductDetailsPage() {
             </div>
 
             <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="flex items-center space-x-1"
-              >
+              <Button variant="ghost" size="sm" className="flex items-center space-x-1">
                 <Heart className="h-4 w-4" />
                 <span>Compare</span>
               </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="flex items-center space-x-1"
-              >
+              <Button variant="ghost" size="sm" className="flex items-center space-x-1">
                 <Heart className="h-4 w-4" />
                 <span>Add Wishlist</span>
               </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="flex items-center space-x-1"
-              >
+              <Button variant="ghost" size="sm" className="flex items-center space-x-1">
                 <MessageCircle className="h-4 w-4" />
                 <span>Ask a question</span>
               </Button>
@@ -275,21 +253,17 @@ export default function ProductDetailsPage() {
                 <strong>SKU:</strong> {product.sku}
               </p>
               <p>
-                <strong>Category:</strong>{" "}
+                <strong>Category:</strong>{' '}
                 <Link href="#" className="text-primary hover:underline">
                   {product.category}
                 </Link>
               </p>
               <p>
-                <strong>Tag:</strong>{" "}
+                <strong>Tag:</strong>{' '}
                 {product.tags.map((tag, index) => (
-                  <Link
-                    key={index}
-                    href="#"
-                    className="text-primary hover:underline mr-1"
-                  >
+                  <Link key={index} href="#" className="text-primary hover:underline mr-1">
                     {tag}
-                    {index < product.tags.length - 1 ? "," : ""}
+                    {index < product.tags.length - 1 ? ',' : ''}
                   </Link>
                 ))}
               </p>
@@ -316,11 +290,7 @@ export default function ProductDetailsPage() {
             {/* Payment Methods */}
             <div className="flex items-center space-x-2">
               {product.paymentMethods.map((method, index) => (
-                <Badge
-                  key={index}
-                  variant="secondary"
-                  className="px-2 py-1 text-xs"
-                >
+                <Badge key={index} variant="secondary" className="px-2 py-1 text-xs">
                   {method}
                 </Badge>
               ))}
@@ -333,12 +303,8 @@ export default function ProductDetailsPage() {
           <Tabs defaultValue="description">
             <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="description">Description</TabsTrigger>
-              <TabsTrigger value="additional-info">
-                Additional Information
-              </TabsTrigger>
-              <TabsTrigger value="reviews">
-                Reviews ({product.reviewsCount})
-              </TabsTrigger>
+              <TabsTrigger value="additional-info">Additional Information</TabsTrigger>
+              <TabsTrigger value="reviews">Reviews ({product.reviewsCount})</TabsTrigger>
             </TabsList>
             <TabsContent value="description" className="mt-4">
               <Card className="bg-card border-border">
@@ -366,11 +332,9 @@ export default function ProductDetailsPage() {
 
         {/* Related Products */}
         <div className="mt-12">
-          <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
-            Related Products
-          </h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6 text-center">Related Products</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {relatedProducts.map((relatedProduct) => (
+            {relatedProducts.map(relatedProduct => (
               <Card
                 key={relatedProduct.id}
                 className="group hover:shadow-lg transition-shadow bg-card border-border"
@@ -378,7 +342,7 @@ export default function ProductDetailsPage() {
                 <CardContent className="p-4">
                   <Link href={`/products/${relatedProduct.id}`}>
                     <Image
-                      src={relatedProduct.image || "/placeholder.svg"}
+                      src={relatedProduct.image || '/placeholder.svg'}
                       alt={relatedProduct.name}
                       width={250}
                       height={200}
@@ -388,9 +352,7 @@ export default function ProductDetailsPage() {
                       <h3 className="font-medium text-card-foreground group-hover:text-primary transition-colors text-sm sm:text-base">
                         {relatedProduct.name}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {relatedProduct.category}
-                      </p>
+                      <p className="text-sm text-muted-foreground">{relatedProduct.category}</p>
                       <span className="font-bold text-lg text-foreground">
                         ${relatedProduct.price.toFixed(2)}
                       </span>

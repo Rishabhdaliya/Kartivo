@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Shield, Zap } from "lucide-react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { ArrowRight, Sparkles, Shield, Zap } from 'lucide-react';
 
 export default function HeroSection() {
   return (

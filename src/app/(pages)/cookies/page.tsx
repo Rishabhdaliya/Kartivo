@@ -1,8 +1,8 @@
-import { PolicyLayout } from "@/components/sections/policy-layout";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Cookie, Settings, Shield, BarChart3 } from "lucide-react";
+import { PolicyLayout } from '@/components/sections/policy-layout';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Cookie, Settings, Shield, BarChart3 } from 'lucide-react';
 
 export default function CookiesPolicy() {
   return (
@@ -23,15 +23,13 @@ export default function CookiesPolicy() {
           </CardHeader>
           <CardContent>
             <p className="text-gray-600 mb-4">
-              Cookies are small data files that are placed on your computer or
-              mobile device when you visit a website. Cookies are widely used by
-              website owners to make their websites work, or to work more
-              efficiently, as well as to provide reporting information.
+              Cookies are small data files that are placed on your computer or mobile device when
+              you visit a website. Cookies are widely used by website owners to make their websites
+              work, or to work more efficiently, as well as to provide reporting information.
             </p>
             <p className="text-gray-600">
-              We use both session cookies (which expire when you close your
-              browser) and persistent cookies (which stay on your device until
-              deleted or expired).
+              We use both session cookies (which expire when you close your browser) and persistent
+              cookies (which stay on your device until deleted or expired).
             </p>
           </CardContent>
         </Card>
@@ -49,16 +47,13 @@ export default function CookiesPolicy() {
             <div className="border-l-4 border-red-500 pl-4">
               <div className="flex items-center space-x-2 mb-2">
                 <Shield className="w-4 h-4 text-red-500" />
-                <h4 className="font-semibold text-red-700">
-                  Essential Cookies
-                </h4>
+                <h4 className="font-semibold text-red-700">Essential Cookies</h4>
                 <Badge variant="destructive" className="text-xs">
                   Required
                 </Badge>
               </div>
               <p className="text-gray-600 text-sm mb-2">
-                These cookies are necessary for the website to function and
-                cannot be switched off.
+                These cookies are necessary for the website to function and cannot be switched off.
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
                 <li>Shopping cart functionality</li>
@@ -72,16 +67,13 @@ export default function CookiesPolicy() {
             <div className="border-l-4 border-blue-500 pl-4">
               <div className="flex items-center space-x-2 mb-2">
                 <BarChart3 className="w-4 h-4 text-blue-500" />
-                <h4 className="font-semibold text-blue-700">
-                  Performance Cookies
-                </h4>
+                <h4 className="font-semibold text-blue-700">Performance Cookies</h4>
                 <Badge variant="secondary" className="text-xs">
                   Optional
                 </Badge>
               </div>
               <p className="text-gray-600 text-sm mb-2">
-                These cookies help us understand how visitors interact with our
-                website.
+                These cookies help us understand how visitors interact with our website.
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
                 <li>Google Analytics for website traffic analysis</li>
@@ -95,9 +87,7 @@ export default function CookiesPolicy() {
             <div className="border-l-4 border-green-500 pl-4">
               <div className="flex items-center space-x-2 mb-2">
                 <Settings className="w-4 h-4 text-green-500" />
-                <h4 className="font-semibold text-green-700">
-                  Functional Cookies
-                </h4>
+                <h4 className="font-semibold text-green-700">Functional Cookies</h4>
                 <Badge variant="secondary" className="text-xs">
                   Optional
                 </Badge>
@@ -119,16 +109,14 @@ export default function CookiesPolicy() {
                 <span className="w-4 h-4 bg-purple-500 rounded text-white text-xs flex items-center justify-center">
                   $
                 </span>
-                <h4 className="font-semibold text-purple-700">
-                  Marketing Cookies
-                </h4>
+                <h4 className="font-semibold text-purple-700">Marketing Cookies</h4>
                 <Badge variant="secondary" className="text-xs">
                   Optional
                 </Badge>
               </div>
               <p className="text-gray-600 text-sm mb-2">
-                These cookies are used to deliver relevant advertisements and
-                track campaign effectiveness.
+                These cookies are used to deliver relevant advertisements and track campaign
+                effectiveness.
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
                 <li>Facebook Pixel and Google Ads tracking</li>
@@ -150,8 +138,7 @@ export default function CookiesPolicy() {
           </CardHeader>
           <CardContent>
             <p className="text-gray-600 mb-4">
-              We may allow third-party companies to set cookies on our website
-              for:
+              We may allow third-party companies to set cookies on our website for:
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
@@ -203,8 +190,7 @@ export default function CookiesPolicy() {
             <div>
               <h4 className="font-semibold mb-2">Cookie Consent Manager</h4>
               <p className="text-gray-600 text-sm mb-3">
-                You can manage your cookie preferences using our cookie consent
-                tool:
+                You can manage your cookie preferences using our cookie consent tool:
               </p>
               <Button variant="outline" className="mb-4 bg-transparent">
                 <Settings className="w-4 h-4 mr-2" />
@@ -219,12 +205,10 @@ export default function CookiesPolicy() {
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
                 <li>
-                  <strong>Chrome:</strong> Settings → Privacy and Security →
-                  Cookies
+                  <strong>Chrome:</strong> Settings → Privacy and Security → Cookies
                 </li>
                 <li>
-                  <strong>Firefox:</strong> Preferences → Privacy & Security →
-                  Cookies
+                  <strong>Firefox:</strong> Preferences → Privacy & Security → Cookies
                 </li>
                 <li>
                   <strong>Safari:</strong> Preferences → Privacy → Cookies
@@ -237,8 +221,8 @@ export default function CookiesPolicy() {
 
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
               <p className="text-amber-800 text-sm">
-                <strong>Note:</strong> Disabling certain cookies may affect
-                website functionality and your user experience.
+                <strong>Note:</strong> Disabling certain cookies may affect website functionality
+                and your user experience.
               </p>
             </div>
           </CardContent>
@@ -254,11 +238,10 @@ export default function CookiesPolicy() {
           </CardHeader>
           <CardContent>
             <p className="text-gray-600">
-              We may update this Cookies Policy from time to time to reflect
-              changes in our practices or for other operational, legal, or
-              regulatory reasons. We will notify you of any material changes by
-              posting the updated policy on our website and updating the Last
-              Updated date.
+              We may update this Cookies Policy from time to time to reflect changes in our
+              practices or for other operational, legal, or regulatory reasons. We will notify you
+              of any material changes by posting the updated policy on our website and updating the
+              Last Updated date.
             </p>
           </CardContent>
         </Card>

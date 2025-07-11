@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const SingleOrderPage = () => {
   return <div>Order Details</div>;

@@ -1,17 +1,16 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import type { Metadata } from 'next';
+import './globals.css';
+import { Header } from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 // import MarqueeBanner from "@/components/layout/MarqueeBanner";
 
 export const metadata: Metadata = {
-  title: "Ecommerce App",
-  description:
-    "A modern ecommerce platform to browse and purchase products online.",
+  title: 'Ecommerce App',
+  description: 'A modern ecommerce platform to browse and purchase products online.'
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {

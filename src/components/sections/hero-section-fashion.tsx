@@ -1,8 +1,8 @@
-"use client";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Shirt, Star, Truck } from "lucide-react";
+'use client';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { ArrowRight, Shirt, Star, Truck } from 'lucide-react';
 
 export default function HeroSectionFashion() {
   return (

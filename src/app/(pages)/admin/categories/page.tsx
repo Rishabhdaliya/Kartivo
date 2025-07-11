@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const CategoriesPage = () => {
   return <div>Manage Categories</div>;

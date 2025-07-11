@@ -1,7 +1,7 @@
-import { PolicyLayout } from "@/components/sections/policy-layout";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { AlertTriangle, RefreshCw, CreditCard } from "lucide-react";
+import { PolicyLayout } from '@/components/sections/policy-layout';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { AlertTriangle, RefreshCw, CreditCard } from 'lucide-react';
 
 export default function TermsOfService() {
   return (
@@ -21,9 +21,9 @@ export default function TermsOfService() {
           </CardHeader>
           <CardContent>
             <p className="text-gray-600">
-              By accessing and using our website, you accept and agree to be
-              bound by the terms and provision of this agreement. If you do not
-              agree to abide by the above, please do not use this service.
+              By accessing and using our website, you accept and agree to be bound by the terms and
+              provision of this agreement. If you do not agree to abide by the above, please do not
+              use this service.
             </p>
           </CardContent>
         </Card>
@@ -39,15 +39,10 @@ export default function TermsOfService() {
           <CardContent>
             <ul className="list-disc list-inside space-y-2 text-gray-600">
               <li>You must be 18 years or older to create an account</li>
-              <li>
-                You are responsible for maintaining the security of your account
-              </li>
+              <li>You are responsible for maintaining the security of your account</li>
               <li>You must provide accurate and complete information</li>
               <li>You are responsible for all activities under your account</li>
-              <li>
-                We reserve the right to suspend or terminate accounts that
-                violate our terms
-              </li>
+              <li>We reserve the right to suspend or terminate accounts that violate our terms</li>
             </ul>
           </CardContent>
         </Card>
@@ -63,13 +58,8 @@ export default function TermsOfService() {
           <CardContent className="space-y-4">
             <ul className="list-disc list-inside space-y-2 text-gray-600">
               <li>All prices are subject to change without notice</li>
-              <li>
-                We strive to display accurate product information and pricing
-              </li>
-              <li>
-                We reserve the right to correct any errors in pricing or product
-                information
-              </li>
+              <li>We strive to display accurate product information and pricing</li>
+              <li>We reserve the right to correct any errors in pricing or product information</li>
               <li>Product availability is subject to change</li>
               <li>We reserve the right to limit quantities purchased</li>
             </ul>
@@ -88,17 +78,9 @@ export default function TermsOfService() {
           <CardContent>
             <ul className="list-disc list-inside space-y-2 text-gray-600">
               <li>Payment is due at the time of purchase</li>
-              <li>
-                We accept major credit cards, PayPal, and other approved payment
-                methods
-              </li>
-              <li>
-                All payments are processed securely through encrypted
-                connections
-              </li>
-              <li>
-                You authorize us to charge your payment method for all purchases
-              </li>
+              <li>We accept major credit cards, PayPal, and other approved payment methods</li>
+              <li>All payments are processed securely through encrypted connections</li>
+              <li>You authorize us to charge your payment method for all purchases</li>
               <li>Additional fees may apply for international transactions</li>
             </ul>
           </CardContent>
@@ -119,17 +101,13 @@ export default function TermsOfService() {
           <CardContent className="space-y-6">
             {/* Return Window */}
             <div>
-              <h4 className="font-semibold mb-3 text-green-800">
-                Return Window
-              </h4>
+              <h4 className="font-semibold mb-3 text-green-800">Return Window</h4>
               <ul className="list-disc list-inside space-y-1 text-gray-700">
                 <li>
-                  <strong>30-day return policy</strong> for most items from
-                  delivery date
+                  <strong>30-day return policy</strong> for most items from delivery date
                 </li>
                 <li>
-                  <strong>14-day return policy</strong> for electronics and
-                  personal care items
+                  <strong>14-day return policy</strong> for electronics and personal care items
                 </li>
                 <li>
                   <strong>7-day return policy</strong> for perishable goods
@@ -139,14 +117,10 @@ export default function TermsOfService() {
 
             {/* Return Conditions */}
             <div>
-              <h4 className="font-semibold mb-3 text-green-800">
-                Return Conditions
-              </h4>
+              <h4 className="font-semibold mb-3 text-green-800">Return Conditions</h4>
               <ul className="list-disc list-inside space-y-1 text-gray-700">
                 <li>Items must be in original condition and packaging</li>
-                <li>
-                  Items must include all original accessories and documentation
-                </li>
+                <li>Items must include all original accessories and documentation</li>
                 <li>Items must not show signs of wear or damage</li>
                 <li>Custom or personalized items cannot be returned</li>
                 <li>Sale items may have different return policies</li>
@@ -155,40 +129,30 @@ export default function TermsOfService() {
 
             {/* Exchange Process */}
             <div>
-              <h4 className="font-semibold mb-3 text-green-800">
-                Exchange Process
-              </h4>
+              <h4 className="font-semibold mb-3 text-green-800">Exchange Process</h4>
               <ol className="list-decimal list-inside space-y-1 text-gray-700">
                 <li>Contact customer service to initiate return/exchange</li>
                 <li>Receive return authorization and shipping label</li>
                 <li>Package item securely with original packaging</li>
                 <li>Ship item using provided return label</li>
-                <li>
-                  Refund/exchange processed within 5-7 business days of receipt
-                </li>
+                <li>Refund/exchange processed within 5-7 business days of receipt</li>
               </ol>
             </div>
 
             {/* Refund Methods */}
             <div>
-              <h4 className="font-semibold mb-3 text-green-800">
-                Refund Methods
-              </h4>
+              <h4 className="font-semibold mb-3 text-green-800">Refund Methods</h4>
               <ul className="list-disc list-inside space-y-1 text-gray-700">
                 <li>Refunds issued to original payment method</li>
                 <li>Store credit available for exchanges</li>
-                <li>
-                  Shipping costs are non-refundable (unless item is defective)
-                </li>
+                <li>Shipping costs are non-refundable (unless item is defective)</li>
                 <li>Return shipping costs are customers responsibility</li>
               </ul>
             </div>
 
             {/* Non-Returnable Items */}
             <div>
-              <h4 className="font-semibold mb-3 text-red-800">
-                Non-Returnable Items
-              </h4>
+              <h4 className="font-semibold mb-3 text-red-800">Non-Returnable Items</h4>
               <ul className="list-disc list-inside space-y-1 text-gray-700">
                 <li>Personalized or custom-made products</li>
                 <li>Perishable goods (food, flowers, etc.)</li>
@@ -210,21 +174,11 @@ export default function TermsOfService() {
           </CardHeader>
           <CardContent>
             <ul className="list-disc list-inside space-y-2 text-gray-600">
-              <li>
-                Shipping costs and delivery times vary by location and method
-              </li>
-              <li>
-                We are not responsible for delays caused by shipping carriers
-              </li>
+              <li>Shipping costs and delivery times vary by location and method</li>
+              <li>We are not responsible for delays caused by shipping carriers</li>
               <li>Risk of loss transfers to you upon delivery</li>
-              <li>
-                You must inspect items upon delivery and report damage
-                immediately
-              </li>
-              <li>
-                Undelivered packages returned to sender may incur additional
-                fees
-              </li>
+              <li>You must inspect items upon delivery and report damage immediately</li>
+              <li>Undelivered packages returned to sender may incur additional fees</li>
             </ul>
           </CardContent>
         </Card>
@@ -240,8 +194,8 @@ export default function TermsOfService() {
           </CardHeader>
           <CardContent>
             <p className="text-gray-600 mb-4">
-              Our liability is limited to the maximum extent permitted by law.
-              We are not liable for:
+              Our liability is limited to the maximum extent permitted by law. We are not liable
+              for:
             </p>
             <ul className="list-disc list-inside space-y-1 text-gray-600">
               <li>Indirect, incidental, or consequential damages</li>

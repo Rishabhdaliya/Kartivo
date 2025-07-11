@@ -1,144 +1,132 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import {
-  ChevronDown,
-  ChevronRight,
-  Grid3X3,
-  List,
-  SlidersHorizontal,
-  Star,
-  X,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
+import { useState } from 'react';
+import Image from 'next/image';
+import { ChevronDown, ChevronRight, Grid3X3, List, SlidersHorizontal, Star, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider";
-import { Badge } from "@/components/ui/badge";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+  SelectValue
+} from '@/components/ui/select';
+import { Slider } from '@/components/ui/slider';
+import { Badge } from '@/components/ui/badge';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 
 const products = [
   {
     id: 1,
-    name: "Headphones Wireless",
+    name: 'Headphones Wireless',
     price: 120.0,
     originalPrice: 150.0,
     image:
-      "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 4,
-    category: "headphones",
+    category: 'headphones'
   },
   {
     id: 2,
-    name: "Gaming Headset Kids",
+    name: 'Gaming Headset Kids',
     price: 135.0,
     originalPrice: 160.0,
     image:
-      "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 5,
-    category: "headphones",
+    category: 'headphones'
   },
   {
     id: 3,
-    name: "Tablet - Nexus Smart Tablet",
+    name: 'Tablet - Nexus Smart Tablet',
     price: 335.0,
     originalPrice: 400.0,
     image:
-      "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 4,
-    category: "tablets",
+    category: 'tablets'
   },
   {
     id: 4,
-    name: "iPhone 14 Pro",
+    name: 'iPhone 14 Pro',
     price: 1199.0,
     originalPrice: 1299.0,
     image:
-      "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 5,
-    category: "phones",
+    category: 'phones'
   },
   {
     id: 5,
-    name: "Apple - iPad Air",
+    name: 'Apple - iPad Air',
     price: 599.0,
     originalPrice: 699.0,
     image:
-      "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 4,
-    category: "tablets",
+    category: 'tablets'
   },
   {
     id: 6,
-    name: "DeepCool Air Cooler",
+    name: 'DeepCool Air Cooler',
     price: 85.0,
     originalPrice: null,
     image:
-      "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 4,
-    category: "cooling",
+    category: 'cooling'
   },
   {
     id: 7,
-    name: "Apple Watch Series 8",
+    name: 'Apple Watch Series 8',
     price: 399.0,
     originalPrice: 449.0,
     image:
-      "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 5,
-    category: "smartwatch",
+    category: 'smartwatch'
   },
   {
     id: 8,
-    name: "Beats Studio Buds",
+    name: 'Beats Studio Buds',
     price: 149.99,
     originalPrice: 179.99,
     image:
-      "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 4,
-    category: "headphones",
-    badge: "FEATURED",
+    category: 'headphones',
+    badge: 'FEATURED'
   },
   {
     id: 9,
-    name: "Sony WH-1000XM4",
+    name: 'Sony WH-1000XM4',
     price: 279.0,
     originalPrice: 349.0,
     image:
-      "https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      'https://images.unsplash.com/photo-1739979054787-719a848cd684?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     rating: 5,
-    category: "headphones",
-  },
+    category: 'headphones'
+  }
 ];
 
 const categories = [
-  { name: "Headphones", count: 15, key: "headphones" },
-  { name: "Smart Watch", count: 8, key: "smartwatch" },
-  { name: "Gaming", count: 12, key: "gaming" },
-  { name: "Laptop", count: 6, key: "laptop" },
-  { name: "Clothing", count: 4, key: "clothing" },
-  { name: "Shoes", count: 7, key: "shoes" },
+  { name: 'Headphones', count: 15, key: 'headphones' },
+  { name: 'Smart Watch', count: 8, key: 'smartwatch' },
+  { name: 'Gaming', count: 12, key: 'gaming' },
+  { name: 'Laptop', count: 6, key: 'laptop' },
+  { name: 'Clothing', count: 4, key: 'clothing' },
+  { name: 'Shoes', count: 7, key: 'shoes' }
 ];
 
 export function ShopGrid() {
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   // const [selectedColors, setSelectedColors] = useState<string[]>([]);
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [sortBy, setSortBy] = useState("default");
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [sortBy, setSortBy] = useState('default');
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(true);
   const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
 
@@ -146,7 +134,7 @@ export function ShopGrid() {
     if (checked) {
       setSelectedCategories([...selectedCategories, category]);
     } else {
-      setSelectedCategories(selectedCategories.filter((c) => c !== category));
+      setSelectedCategories(selectedCategories.filter(c => c !== category));
     }
   };
 
@@ -162,9 +150,7 @@ export function ShopGrid() {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
-        className={`w-4 h-4 ${
-          i < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
-        }`}
+        className={`w-4 h-4 ${i < rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`}
       />
     ));
   };
@@ -176,8 +162,7 @@ export function ShopGrid() {
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Shop Grid</h1>
           <nav className="text-sm text-gray-600">
-            <span>Home</span> <span className="mx-2">›</span>{" "}
-            <span>Shop Grid</span>
+            <span>Home</span> <span className="mx-2">›</span> <span>Shop Grid</span>
           </nav>
         </div>
 
@@ -207,11 +192,7 @@ export function ShopGrid() {
             className={`
             fixed lg:static inset-y-0 left-0  w-80 bg-white lg:bg-transparent
             transform transition-transform duration-300 ease-in-out lg:transform-none
-            ${
-              isMobileFiltersOpen
-                ? "translate-x-0"
-                : "-translate-x-full lg:translate-x-0"
-            }
+            ${isMobileFiltersOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
             overflow-y-auto lg:overflow-visible h-full lg:h-auto
             p-4 lg:p-0 space-y-6
           `}
@@ -219,11 +200,7 @@ export function ShopGrid() {
             {/* Mobile Close Button */}
             <div className="lg:hidden flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold">Filters</h2>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsMobileFiltersOpen(false)}
-              >
+              <Button variant="ghost" size="sm" onClick={() => setIsMobileFiltersOpen(false)}>
                 <X className="w-4 h-4" />
               </Button>
             </div>
@@ -247,11 +224,7 @@ export function ShopGrid() {
                     <span>${priceRange[0]}</span>
                     <span>${priceRange[1]}</span>
                   </div>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full bg-transparent"
-                  >
+                  <Button variant="outline" size="sm" className="w-full bg-transparent">
                     Filter
                   </Button>
                 </div>
@@ -261,10 +234,7 @@ export function ShopGrid() {
             {/* Categories */}
             <Card>
               <CardContent className="p-4">
-                <Collapsible
-                  open={isCategoriesOpen}
-                  onOpenChange={setIsCategoriesOpen}
-                >
+                <Collapsible open={isCategoriesOpen} onOpenChange={setIsCategoriesOpen}>
                   <CollapsibleTrigger className="flex items-center justify-between w-full">
                     <h3 className="font-semibold">Categories</h3>
                     {isCategoriesOpen ? (
@@ -274,29 +244,21 @@ export function ShopGrid() {
                     )}
                   </CollapsibleTrigger>
                   <CollapsibleContent className="mt-4 space-y-3">
-                    {categories.map((category) => (
-                      <div
-                        key={category.key}
-                        className="flex items-center justify-between"
-                      >
+                    {categories.map(category => (
+                      <div key={category.key} className="flex items-center justify-between">
                         <div className="flex items-center space-x-2">
                           <Checkbox
                             id={category.key}
                             checked={selectedCategories.includes(category.key)}
-                            onCheckedChange={(checked) =>
-                              handleCategoryChange(
-                                category.key,
-                                checked as boolean
-                              )
+                            onCheckedChange={checked =>
+                              handleCategoryChange(category.key, checked as boolean)
                             }
                           />
                           <Label htmlFor={category.key} className="text-sm">
                             {category.name}
                           </Label>
                         </div>
-                        <span className="text-xs text-gray-500">
-                          {category.count}
-                        </span>
+                        <span className="text-xs text-gray-500">{category.count}</span>
                       </div>
                     ))}
                   </CollapsibleContent>
@@ -309,9 +271,7 @@ export function ShopGrid() {
           <div className="flex-1 w-full lg:w-auto">
             {/* Top Bar */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 bg-white p-4  shadow-sm space-y-4 sm:space-y-0">
-              <div className="text-sm text-gray-600">
-                Showing 1–12 of 36 results
-              </div>
+              <div className="text-sm text-gray-600">Showing 1–12 of 36 results</div>
               <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
                 <Select value={sortBy} onValueChange={setSortBy}>
                   <SelectTrigger className="w-full sm:w-40">
@@ -319,28 +279,24 @@ export function ShopGrid() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="default">Default Sorting</SelectItem>
-                    <SelectItem value="price-low">
-                      Price: Low to High
-                    </SelectItem>
-                    <SelectItem value="price-high">
-                      Price: High to Low
-                    </SelectItem>
+                    <SelectItem value="price-low">Price: Low to High</SelectItem>
+                    <SelectItem value="price-high">Price: High to Low</SelectItem>
                     <SelectItem value="rating">Highest Rated</SelectItem>
                     <SelectItem value="newest">Newest First</SelectItem>
                   </SelectContent>
                 </Select>
                 <div className="flex items-center space-x-2">
                   <Button
-                    variant={viewMode === "grid" ? "default" : "outline"}
+                    variant={viewMode === 'grid' ? 'default' : 'outline'}
                     size="sm"
-                    onClick={() => setViewMode("grid")}
+                    onClick={() => setViewMode('grid')}
                   >
                     <Grid3X3 className="w-4 h-4" />
                   </Button>
                   <Button
-                    variant={viewMode === "list" ? "default" : "outline"}
+                    variant={viewMode === 'list' ? 'default' : 'outline'}
                     size="sm"
-                    onClick={() => setViewMode("list")}
+                    onClick={() => setViewMode('list')}
                   >
                     <List className="w-4 h-4" />
                   </Button>
@@ -353,30 +309,25 @@ export function ShopGrid() {
               className={`
               grid gap-4 sm:gap-6
               ${
-                viewMode === "grid"
-                  ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
-                  : "grid-cols-1"
+                viewMode === 'grid'
+                  ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3'
+                  : 'grid-cols-1'
               }
             `}
             >
-              {products.map((product) => (
-                <Card
-                  key={product.id}
-                  className="group hover:shadow-lg transition-shadow p-0"
-                >
+              {products.map(product => (
+                <Card key={product.id} className="group hover:shadow-lg transition-shadow p-0">
                   <CardContent className="px-0">
                     <div className="relative ">
                       <Image
-                        src={product.image || "/placeholder.svg"}
+                        src={product.image || '/placeholder.svg'}
                         alt={product.name}
                         width={250}
                         height={250}
                         className="w-full h-48 rounded-t-sm object-cover  "
                       />
                       {product.badge && (
-                        <Badge className="absolute top-2 left-2 bg-red-500">
-                          {product.badge}
-                        </Badge>
+                        <Badge className="absolute top-2 left-2 bg-red-500">{product.badge}</Badge>
                       )}
                     </div>
                     <div className="space-y-2 p-4">
@@ -387,9 +338,7 @@ export function ShopGrid() {
                         {renderStars(product.rating)}
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className="font-bold text-lg">
-                          ${product.price.toFixed(2)}
-                        </span>
+                        <span className="font-bold text-lg">${product.price.toFixed(2)}</span>
                         {product.originalPrice && (
                           <span className="text-sm text-gray-500 line-through">
                             ${product.originalPrice.toFixed(2)}

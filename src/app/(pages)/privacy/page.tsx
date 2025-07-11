@@ -1,5 +1,5 @@
-import { PolicyLayout } from "@/components/sections/policy-layout";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PolicyLayout } from '@/components/sections/policy-layout';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function PrivacyPolicy() {
   return (
@@ -23,10 +23,7 @@ export default function PrivacyPolicy() {
               <ul className="list-disc list-inside space-y-1 text-gray-600">
                 <li>Name, email address, phone number</li>
                 <li>Billing and shipping addresses</li>
-                <li>
-                  Payment information (processed securely by our payment
-                  providers)
-                </li>
+                <li>Payment information (processed securely by our payment providers)</li>
                 <li>Account credentials and preferences</li>
               </ul>
             </div>
@@ -54,13 +51,8 @@ export default function PrivacyPolicy() {
             <ul className="list-disc list-inside space-y-2 text-gray-600">
               <li>Process and fulfill your orders</li>
               <li>Provide customer support and respond to inquiries</li>
-              <li>
-                Send order confirmations, shipping updates, and important
-                notices
-              </li>
-              <li>
-                Personalize your shopping experience and product recommendations
-              </li>
+              <li>Send order confirmations, shipping updates, and important notices</li>
+              <li>Personalize your shopping experience and product recommendations</li>
               <li>Improve our website, products, and services</li>
               <li>Prevent fraud and ensure platform security</li>
               <li>Send marketing communications (with your consent)</li>
@@ -81,25 +73,23 @@ export default function PrivacyPolicy() {
             <p className="text-gray-600">We may share your information with:</p>
             <ul className="list-disc list-inside space-y-2 text-gray-600">
               <li>
-                <strong>Service Providers:</strong> Payment processors, shipping
-                companies, and technology providers
+                <strong>Service Providers:</strong> Payment processors, shipping companies, and
+                technology providers
               </li>
               <li>
-                <strong>Business Partners:</strong> Trusted partners who help us
-                operate our business
+                <strong>Business Partners:</strong> Trusted partners who help us operate our
+                business
               </li>
               <li>
-                <strong>Legal Requirements:</strong> When required by law or to
-                protect our rights
+                <strong>Legal Requirements:</strong> When required by law or to protect our rights
               </li>
               <li>
-                <strong>Business Transfers:</strong> In connection with mergers,
-                acquisitions, or asset sales
+                <strong>Business Transfers:</strong> In connection with mergers, acquisitions, or
+                asset sales
               </li>
             </ul>
             <p className="text-gray-600 font-medium">
-              We never sell your personal information to third parties for
-              marketing purposes.
+              We never sell your personal information to third parties for marketing purposes.
             </p>
           </CardContent>
         </Card>
@@ -114,8 +104,7 @@ export default function PrivacyPolicy() {
           </CardHeader>
           <CardContent>
             <p className="text-gray-600 mb-4">
-              We implement appropriate security measures to protect your
-              personal information:
+              We implement appropriate security measures to protect your personal information:
             </p>
             <ul className="list-disc list-inside space-y-1 text-gray-600">
               <li>SSL encryption for data transmission</li>
@@ -138,28 +127,22 @@ export default function PrivacyPolicy() {
           <CardContent>
             <ul className="list-disc list-inside space-y-2 text-gray-600">
               <li>
-                <strong>Access:</strong> Request access to your personal
-                information
+                <strong>Access:</strong> Request access to your personal information
               </li>
               <li>
-                <strong>Correction:</strong> Update or correct inaccurate
-                information
+                <strong>Correction:</strong> Update or correct inaccurate information
               </li>
               <li>
-                <strong>Deletion:</strong> Request deletion of your personal
-                information
+                <strong>Deletion:</strong> Request deletion of your personal information
               </li>
               <li>
-                <strong>Portability:</strong> Request a copy of your data in a
-                portable format
+                <strong>Portability:</strong> Request a copy of your data in a portable format
               </li>
               <li>
-                <strong>Marketing Opt-out:</strong> Unsubscribe from marketing
-                communications
+                <strong>Marketing Opt-out:</strong> Unsubscribe from marketing communications
               </li>
               <li>
-                <strong>Cookie Management:</strong> Control cookie preferences
-                through your browser
+                <strong>Cookie Management:</strong> Control cookie preferences through your browser
               </li>
             </ul>
           </CardContent>

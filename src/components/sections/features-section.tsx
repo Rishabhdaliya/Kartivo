@@ -1,36 +1,36 @@
-import { Truck, RefreshCw, Percent, Headphones } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Truck, RefreshCw, Percent, Headphones } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const features = [
   {
     icon: Truck,
-    title: "Free Delivery",
-    description: "Orders from all item",
-    colorClass: "text-primary",
-    bgColorClass: "bg-primary/10",
+    title: 'Free Delivery',
+    description: 'Orders from all item',
+    colorClass: 'text-primary',
+    bgColorClass: 'bg-primary/10'
   },
   {
     icon: RefreshCw,
-    title: "Return & Refund",
-    description: "Money back guarantee",
-    colorClass: "text-chart-2",
-    bgColorClass: "bg-chart-2/10",
+    title: 'Return & Refund',
+    description: 'Money back guarantee',
+    colorClass: 'text-chart-2',
+    bgColorClass: 'bg-chart-2/10'
   },
   {
     icon: Percent,
-    title: "Member Discount",
-    description: "On every order over $140.00",
-    colorClass: "text-chart-1",
-    bgColorClass: "bg-chart-1/10",
+    title: 'Member Discount',
+    description: 'On every order over $140.00',
+    colorClass: 'text-chart-1',
+    bgColorClass: 'bg-chart-1/10'
   },
   {
     icon: Headphones,
-    title: "Support 24/7",
-    description: "Contact us 24 hours a day",
-    colorClass: "text-chart-4",
-    bgColorClass: "bg-chart-4/10",
-  },
-]
+    title: 'Support 24/7',
+    description: 'Contact us 24 hours a day',
+    colorClass: 'text-chart-4',
+    bgColorClass: 'bg-chart-4/10'
+  }
+];
 
 export function FeaturesSection() {
   return (
@@ -38,7 +38,7 @@ export function FeaturesSection() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {features.map((feature, index) => {
-            const IconComponent = feature.icon
+            const IconComponent = feature.icon;
             return (
               <Card
                 key={index}
@@ -53,13 +53,15 @@ export function FeaturesSection() {
                   <h3 className="font-semibold text-card-foreground mb-1 md:mb-2 text-sm md:text-base">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">{feature.description}</p>
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </CardContent>
               </Card>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,18 +1,10 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Youtube,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
+import Link from 'next/link';
+import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Separator } from '@/components/ui/separator';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -26,16 +18,13 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">
-                  SN
-                </span>
+                <span className="text-primary-foreground font-bold text-sm">SN</span>
               </div>
               <span className="text-xl font-bold">ShopNext</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Your trusted e-commerce destination for quality products at
-              unbeatable prices. We are committed to providing exceptional
-              shopping experiences.
+              Your trusted e-commerce destination for quality products at unbeatable prices. We are
+              committed to providing exceptional shopping experiences.
             </p>
             <div className="flex space-x-2">
               <Button variant="ghost" size="icon" asChild>
@@ -154,11 +143,7 @@ export default function Footer() {
               Subscribe to our newsletter for exclusive deals and updates.
             </p>
             <div className="flex space-x-2">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1"
-              />
+              <Input type="email" placeholder="Enter your email" className="flex-1" />
               <Button type="submit" size="sm">
                 Subscribe
               </Button>
@@ -188,22 +173,13 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 text-sm text-muted-foreground">
             <p>&copy; {currentYear} ShopNext. All rights reserved.</p>
             <div className="flex space-x-4">
-              <Link
-                href="/privacy"
-                className="hover:text-primary transition-colors"
-              >
+              <Link href="/privacy" className="hover:text-primary transition-colors">
                 Privacy Policy
               </Link>
-              <Link
-                href="/terms"
-                className="hover:text-primary transition-colors"
-              >
+              <Link href="/terms" className="hover:text-primary transition-colors">
                 Terms of Service
               </Link>
-              <Link
-                href="/cookies"
-                className="hover:text-primary transition-colors"
-              >
+              <Link href="/cookies" className="hover:text-primary transition-colors">
                 Cookie Policy
               </Link>
             </div>
